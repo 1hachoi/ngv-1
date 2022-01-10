@@ -1,0 +1,21 @@
+// first program
+
+/*
+aaaa
+multiline comment
+중첩될수 없음.
+
+github.com/aosp-mirror  접속
+platform system core repository
+bbb
+*/
+
+#include <stdio.h> 
+
+int main()
+{
+    printf("hello, c\t");
+    printf("world\n");
+    return 0;
+}
+

@@ -1,0 +1,15 @@
+강석민 강사
+
+smkang @ codenuri.co.kr
+
+실습환경 : visual studio 2022
+         gcc/xcode 도 가능. 
+	
+
+
+C/C++컴파일러 : gcc, clang, visual studio
+	xcode(결국 clang또는 gcc사용)
+
+
+
+

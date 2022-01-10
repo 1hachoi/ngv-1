@@ -1,0 +1,17 @@
+
+교재 2page
+
+원하는 폴더 만드세요
+
+first.txt 로 저장하세요
+UTF-8도 되고 ansi 도가능
+
+google.com 에서
+
+gcc컴파일러 설치
+mingw 11 github 검색해 보세요
+
+
+
+
+
