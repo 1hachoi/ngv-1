@@ -1,3 +1,4 @@
+// dbcs.c
 #include <stdio.h>
 #include <Windows.h> 
 
@@ -8,3 +9,4 @@ int main()
 		printf("%d, %d\n", i, IsDBCSLeadByte(i));
 	}
 }
+// 
