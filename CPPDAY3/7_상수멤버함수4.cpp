@@ -3,7 +3,7 @@
 
 class Test
 {
-	int data;
+	int data = 0;
 public:
 	// 1. 동일 이름의 상수 멤버 함수의 비상수 멤버를 동시에 제공가능
 	void foo()       { std::cout << "foo()"       << std::endl; } // 1
