@@ -14,4 +14,5 @@ int main()
 {
 	Test t;
 	t.foo().foo().foo().foo().foo();
+	std::cout << "----------------" << std::endl;
 }
