@@ -1,5 +1,18 @@
 #include <iostream>
 
+// 여러개 클래스에서 객체 갯수 관리기술 사용하려면 
+// 전역변수라면 아래 처럼 이름이 달라야 했지만
+int car_cnt = 0;
+int truck_cnt = 0;
+
+// static 으로 하면 아래 처럼 "cnt" 라는 동일한 이름 사용가능
+class Truck
+{
+public:
+	static int cnt;
+};
+int Truck::cnt = 0;
+
 class Car
 {
 	int speed;		// 일반 멤버 데이타(non static member data)
