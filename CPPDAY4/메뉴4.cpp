@@ -3,16 +3,28 @@
 #include <vector>
 #include <conio.h>
 
-
-
-class MenuItem
+// 모든 메뉴의 기반 클래스
+class BaseMenu
 {
 	std::string title;
-	int id;
 public:
-	MenuItem(const std::string& s, int n) : title(s), id(n) {}
+	BaseMenu(const std::string& s) : title(s) {}
 
 	std::string getTitle() const { return title; }
+
+	// 모든 메뉴는 선택될수 있다.. 
+	// 구현은 파생 클래스가 반드시 해야 한다.
+	virtual void command() = 0;
+};
+
+
+
+class MenuItem : public BaseMenu
+{
+	int id;
+public:
+	MenuItem(const std::string& s, int n) : BaseMenu(s), id(n) {}
+
 	void command()
 	{
 		std::cout << getTitle() << "메뉴 선택됨" << std::endl;
@@ -20,14 +32,13 @@ public:
 	}
 };
 
-class PopupMenu
+class PopupMenu : public BaseMenu
 {
-	std::string title;
-	std::vector<MenuItem*> v;
+	std::vector<BaseMenu*> v;
 public:
-	PopupMenu(const std::string& s) : title(s) {}
+	PopupMenu(const std::string& s) : BaseMenu(s) {}
 
-	void addMenu(MenuItem* p) { v.push_back(p); }
+	void addMenu(BaseMenu* p) { v.push_back(p); }
 
 	void command()
 	{
@@ -63,14 +74,22 @@ public:
 
 int main()
 {
-	MenuItem m1("김밥", 1);
-	MenuItem m2("라면", 2);
+	PopupMenu* menubar = new PopupMenu("MENUBAR");
+	PopupMenu* p1 = new PopupMenu("해상도변경");
+	PopupMenu* p2 = new PopupMenu("색상변경");
 
-	PopupMenu pm("분식");
-	pm.addMenu(&m1);
-	pm.addMenu(&m2);
+	menubar->addMenu(p1);
+	menubar->addMenu(p2);
 
-	pm.command();
+	p1->addMenu(new MenuItem("HD",  11));
+	p1->addMenu(new MenuItem("FHD", 12));
+	p1->addMenu(new MenuItem("UHD", 13));
+
+	p2->addMenu(new MenuItem("RED",   21));
+	p2->addMenu(new MenuItem("GREEN", 22));
+	p2->addMenu(new MenuItem("BLUE",  23));
+
+	//이제 시작하려면 ??
 }
 
 
