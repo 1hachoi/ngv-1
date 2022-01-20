@@ -31,8 +31,28 @@ public:
 	// 팝업메뉴 선택시 해야할일 
 	void command()
 	{
+		system("cls"); // 화면지우기
+
+		int sz = v.size(); // 하위 메뉴 갯수
+
+		for (int i = 0; i < sz; i++)
+		{
+			std::cout << i + 1 << ". " << v[i]->getTitle() << std::endl;
+		}
+		std::cout << sz + 1 << ". 종료" << std::endl;
+
+		std::cout << "메뉴를 선택하세요 >> ";
+
+		int cmd;
+		std::cin >> cmd;
+
+		v[cmd - 1]->command(); // 선택된 메뉴 실행
 	}
 };
+
+
+
+
 int main()
 {
 	MenuItem m1("김밥", 1);
@@ -41,6 +61,8 @@ int main()
 	PopupMenu pm("분식");
 	pm.addMenu(&m1);
 	pm.addMenu(&m2);
+
+	pm.command();
 }
 
 
