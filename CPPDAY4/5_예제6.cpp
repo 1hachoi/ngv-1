@@ -1,6 +1,27 @@
 #include <iostream>
 #include <vector>
 
+// 디자인 패턴 : 이미 알려진 좋은 스타일의 객체지향 코드에 이름을 부여 한것
+//      1994년 4명의 엔지니어가 쓴 "Design Pattern" 이라는 서적
+//			GoF Design Pattern - 23개의 패턴.
+//      Gangs Of Four
+
+// 우리가 만든 Clone() 가상 함수는 "Prototype Pattern" 이라는 이름을 가지고 있습니다.
+
+
+// Undo/Redo 를 하고 싶다. ==> "Command 패턴"을 공부해 보세요
+
+
+// Refactoring : 기존에 작성된 코드의 구조를 변경하는 작업
+//				실행결과는 동일(유사)하지만 보다 좋은 구조로 변경하는 것
+
+// 리팩토링 책에 60여개의 기술(이름)을 이야기 합니다.
+// 
+// 아래 이름 이해 되는지 보세요
+// "Replace Conditional(제어문) With Polymorphism(다형성)"
+
+
+
 
 class Shape
 {
@@ -29,7 +50,8 @@ public:
 	}
 	void Draw() { std::cout << "Draw Rect" << std::endl; }
 
-	virtual Shape* Clone()
+//	virtual Shape* Clone()
+	virtual Rect*  Clone()
 	{
 		Rect* p = new Rect(x, y, w, h); // 나와 같은 모양
 		return p;
@@ -37,7 +59,8 @@ public:
 };
 // Clone()의 의미는 아래 2줄을 생각해 보세요
 // Rect* p1 = new Rect(1,1,10,10);
-// Rect* p2 = p1->Clone();
+// Rect* p2 = (Rect*)(p1->Clone());
+
 
 
 
@@ -53,7 +76,8 @@ public:
 
 	void Draw() { std::cout << "Draw Circle" << std::endl; }
 
-	virtual Shape* Clone()
+//	virtual Shape* Clone()
+	virtual Circle* Clone()
 	{
 		Circle* p = new Circle(x, y, r); 
 		return p;
@@ -98,7 +122,11 @@ int main()
 }
 
 
+// Point pt;
+// Point pt(1,1)
 
+// Point* p1 = new Point;
+// Point* p2 = new Point(1,2);
 
 
 
