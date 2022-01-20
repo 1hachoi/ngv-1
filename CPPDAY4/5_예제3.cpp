@@ -23,7 +23,10 @@
 
 class Shape 
 {
+	int color;
 public:
+	void setColor(int c) { color = c; } // 이 함수는 가상일 필요는 없습니다.
+ 
 	virtual void Draw() { std::cout << "Draw Shape" << std::endl; }
 };
 
