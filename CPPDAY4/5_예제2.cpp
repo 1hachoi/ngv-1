@@ -40,8 +40,15 @@ int main()
 
 		else if (cmd == 9)
 		{
-			for (auto p : v)
-				p->Draw();
+			for (auto p : v) // 결국 Shape* p 입니다.
+				p->Draw();   // error. p에는 Draw 가 없습니다.
+							 // 핵심 : Shape* 로는 Shape 에 있는 멤버만 접근가능.
+							 // 
+			// 해결책 1. p를 Rect 나 Circle 로 캐스팅후 Draw 호출
+			//		    ((Rect*)p)->Draw(); 
+			//		    그런데, 코드 작성시는 Rect 인지 Circle 인지 알수 없다.
+			//			그래서, 이코드에서는 이 해결책은 사용할수 없다.
+			//	=> 다음예제에서 해결
 		}
 	}
 }
