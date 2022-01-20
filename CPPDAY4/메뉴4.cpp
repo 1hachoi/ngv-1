@@ -79,7 +79,8 @@ int main()
 	PopupMenu* p2 = new PopupMenu("색상변경");
 
 	menubar->addMenu(p1);
-	menubar->addMenu(p2);
+//	menubar->addMenu(p2);
+	p1->addMenu(p2);
 
 	p1->addMenu(new MenuItem("HD",  11));
 	p1->addMenu(new MenuItem("FHD", 12));
@@ -90,6 +91,7 @@ int main()
 	p2->addMenu(new MenuItem("BLUE",  23));
 
 	//이제 시작하려면 ??
+	menubar->command();
 }
 
 
