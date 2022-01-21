@@ -12,6 +12,7 @@ public:
 	// => 하는일은 모든 멤버를 복사 해 줍니다.
 	Point(const Point& pt) : x(pt.x), y(pt.y)
 	{
+		std::cout << "복사생성자" << std::endl;
 	}
 };
 int main()
