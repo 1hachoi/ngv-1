@@ -9,6 +9,13 @@ public:
 };
 int main()
 {
-	Point p1(1, 1);
+	int n = 10;
+	Point p(1, 1);
 
+	std::cout << n; // ok
+	std::cout << p; // ?
 }
+
+
+
+
